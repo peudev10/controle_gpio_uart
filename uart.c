@@ -69,6 +69,8 @@ void processar_comando(const char *command) {
 }
 
 int main() {
+    char command[1024];  
+
     stdio_init_all();
 
     gpio_init(LED_VERMELHO);
@@ -81,26 +83,12 @@ int main() {
     gpio_set_dir(LED_AZUL, GPIO_OUT);
     gpio_set_dir(BUZZER_GPIO, GPIO_OUT);
 
-    char command[10] = {0};  
-    int index = 0;
-
     while (true) {
         if (stdio_usb_connected()) {
-            int c = getchar_timeout_us(10000);
-            if (c != PICO_ERROR_TIMEOUT) {
-                if (c == '\n' || c == '\r') {  // Final da entrada
-                    command[index] = '\0';  // Finaliza a string
+            printf("\nDIGITE O COMANDO: "); 
+            scanf("%1024s", command);
 
-                    processar_comando(command);  // Processa o comando recebido
-
-                    index = 0; 
-                    memset(command, 0, sizeof(command));  // Limpa o buffer
-
-                } else if (index < sizeof(command) - 1) {
-                    command[index++] = (char)c;  // Adiciona caractere ao buffer
-                    putchar(c);  // imprime caractere no terminal
-                }
-            }
+            processar_comando(command);
         }
     }
 
