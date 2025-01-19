@@ -12,7 +12,7 @@ void controlar_led(int led_ativo) {
     gpio_put(LED_VERMELHO, 0);
     gpio_put(LED_VERDE, 0);
     gpio_put(LED_AZUL, 0);
-
+ 
     if (led_ativo != 0) {
         gpio_put(led_ativo, 1);
     }
@@ -24,7 +24,8 @@ void processar_comando(const char *command) {
         controlar_led(LED_VERMELHO);
         printf("\nLED vermelho aceso!\n");
     } else if (strcmp(command, "GREEN") == 0) {
-        
+         controlar_led(LED_VERDE);
+        printf("\nLED verde aceso!\n");
         
     } else if (strcmp(command, "BLUE") == 0) {
         
