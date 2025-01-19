@@ -22,12 +22,12 @@ A tabela abaixo descreve os comandos implementados e suas funcionalidades planej
 
 | **Comando** | **Descrição**                                     | **Responsável** |
 |-------------|---------------------------------------------------|-----------------|
-| `RED`       | Liga o LED vermelho (GPIO 13).                    | Pedro           |
+| `RED`       | Liga o LED vermelho (GPIO 13).                    | Pedro Duarte    |
 | `GREEN`     | Liga o LED verde (GPIO 11).                       | Ícaro           |
 | `BLUE`      | Liga o LED azul (GPIO 12).                        | Samyr           |
 | `WHITE`     | Liga todos os LEDs, simulando luz branca.         | Bruna           |
 | `OFF`       | Desliga todos os LEDs.                            | Reinan          |
-| `BUZZER`    | Aciona o buzzer por 2 segundos.                   |                 |
+| `BUZZER`    | Aciona o buzzer por 2 segundos.                   | Gabriel Shiva   |
 | `SEQUENCE`  | Liga os LEDs em animação sequencial.              |                 |
 | `REBOOT`    | Habilita modo gravação (reboot).                  |                 |
 
