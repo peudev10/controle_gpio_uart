@@ -24,7 +24,8 @@ void processar_comando(const char *command) {
         controlar_led(LED_VERMELHO);
         printf("\nLED vermelho aceso!\n");
     } else if (strcmp(command, "GREEN") == 0) {
-        
+         controlar_led(LED_VERDE);
+        printf("\nLED verde aceso!\n");
         
     } else if (strcmp(command, "BLUE") == 0) {
         
