@@ -43,4 +43,4 @@ A tabela abaixo descreve os comandos implementados e suas funcionalidades planej
 
 ## Link para Apresentação em Vídeo
 
-O vídeo demonstrando o funcionamento do projeto pode ser acessado [aqui](#).
+O vídeo demonstrando o funcionamento do projeto pode ser acessado [aqui](https://drive.google.com/file/d/1DEAElFLA5ENNIuHGiwDmEz23rfH2NVKk/view?usp=drivesdk).
