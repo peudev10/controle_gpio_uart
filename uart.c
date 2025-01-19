@@ -7,6 +7,21 @@
 #define LED_AZUL 12      // Pino do LED azul
 #define BUZZER_GPIO 21   // Pino do buzzer
 
+const uint32_t buzzer_frequency = 250;
+
+// Ativa o buzzer com uma certa frequência e por um certo tempo
+void buzzer_active(uint32_t buzzer_frequency_in, uint32_t duration_buzzer_on) {
+    uint32_t half_period_us = (1000000 / buzzer_frequency_in) / 2; // Define por quanto tempo o pino conectado ao buzzer deve ficar em nível alto/baixo
+
+    // gera uma onda quadrada
+    for (uint32_t i = 0; i < duration_buzzer_on * 1000; i += half_period_us * 2) {
+        gpio_put(BUZZER_GPIO, 1);
+        sleep_us(half_period_us);
+        gpio_put(BUZZER_GPIO, 0);
+        sleep_us(half_period_us);
+    }
+}
+
 // Função para controlar os LEDs
 void controlar_led(int led_ativo) {
     gpio_put(LED_VERMELHO, 0);
@@ -39,7 +54,8 @@ void processar_comando(const char *command) {
         printf("\nLEDs desligados!\n");
         
     } else if (strcmp(command, "BUZZER") == 0) {
-        
+        buzzer_active(buzzer_frequency, 2000);
+        printf("\nBUZZER ativo em %d HZ!\n", buzzer_frequency);
     } else {
         printf("\nComando nao reconhecido: %s\n", command);
     }
