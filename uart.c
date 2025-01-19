@@ -18,6 +18,12 @@ void controlar_led(int led_ativo) {
     }
 }
 
+void ligar_leds(bool led_ativo){// Função para ligar todos os LEDs
+    gpio_put(LED_VERMELHO, led_ativo);
+    gpio_put(LED_VERDE, led_ativo);
+    gpio_put(LED_AZUL, led_ativo);
+}
+
 // Função para processar o comando recebido
 void processar_comando(const char *command) {
     if (strcmp(command, "RED") == 0) {
@@ -32,7 +38,8 @@ void processar_comando(const char *command) {
         printf("\nLED azul aceso!\n");
         
     } else if (strcmp(command, "WHITE") == 0) {
-    
+        ligar_leds(1);
+        printf("\nLED branco aceso!\n");
         
     } else if (strcmp(command, "OFF") == 0) {
         controlar_led(0);
