@@ -29,9 +29,11 @@ void processar_comando(const char *command) {
     } else if (strcmp(command, "BLUE") == 0) {
         
     } else if (strcmp(command, "WHITE") == 0) {
-        
+    
         
     } else if (strcmp(command, "OFF") == 0) {
+        controlar_led(0);
+        printf("\nLEDs desligados!\n");
         
     } else if (strcmp(command, "BUZZER") == 0) {
         
